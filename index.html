@@ -507,15 +507,34 @@
                 <div class="zf-clearBoth"></div>
               </li>
               <!---------Decision Ends Here---------->
-              <!---------Single Line Starts Here---------->
-              <li class="zf-tempFrmWrapper zf-small" style="display: none">
+              <!---------Dropdown Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small" style="display: none;">
                 <label class="zf-labelName"> Lead Source </label>
+                <div class="zf-tempContDiv">
+                  <select class="zf-form-sBox" name="Dropdown2" checktype="c1">
+                    <option selected="true" value="-Select-">-Select-</option>
+                    <option value="Website" selected>Website</option>
+                  </select>
+                  <p
+                    id="Dropdown2_error"
+                    class="zf-errorMessage"
+                    style="display: none"
+                  >
+                    Invalid value
+                  </p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Dropdown Ends Here---------->
+              <!---------Single Line Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small" style="display: none;">
+                <label class="zf-labelName"> UTM Medium </label>
                 <div class="zf-tempContDiv">
                   <span>
                     <input
-                      id="lead_source"
+                      id="UTM"
                       type="text"
-                      name="SingleLine7"
+                      name="SingleLine8"
                       checktype="c1"
                       value=""
                       maxlength="255"
@@ -523,7 +542,7 @@
                       placeholder=""
                   /></span>
                   <p
-                    id="SingleLine7_error"
+                    id="SingleLine8_error"
                     class="zf-errorMessage"
                     style="display: none"
                   >
@@ -608,7 +627,8 @@
         "SingleLine1",
         "MultiLine",
         "DecisionBox",
-        "SingleLine7",
+        "Dropdown2",
+        "SingleLine8",
         "SingleLine6",
       ];
       var isSalesIQIntegrationEnabled = false;
@@ -669,10 +689,10 @@
     <script>
       window.addEventListener("message", function (event) {
         if (event.data.utm_medium || event.data.utm_source) {
-          const leadSource = document.getElementById("lead_source");
+          const UTMmedium = document.getElementById("UTM");
           const CampaignName = document.getElementById("campaign_name");
-          if (leadSource || CampaignName) {
-            leadSource.value = event.data.utm_medium || "";
+          if (UTMmedium || CampaignName) {
+            UTMmedium.value = event.data.utm_medium || "";
             CampaignName.value = event.data.utm_source || "";
           }
         }
