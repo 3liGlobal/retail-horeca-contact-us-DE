@@ -1,5 +1,15 @@
 <html>
   <head>
+    <!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id=GTM-WKCGF56W'+dl;
+f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WKCGF56W');
+</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <title>Kontaktiere&#x20;uns&#x20;Retail&#x20;&#x2f;&#x20;HoReCa</title>
     <link href="css/form.css" rel="stylesheet" type="text/css" />
@@ -7,6 +17,11 @@
   </head>
   <body class="zf-backgroundBg">
     <!-- Change or deletion of the name attributes in the input tag will lead to empty values on record submission-->
+      <!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKCGF56W"
+height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
     <div class="zf-templateWidth">
       <form
         action="https://forms.zohopublic.eu/ookaportal/form/KontaktiereunsRetailHoReCa/formperma/i3GTzLOdIiw7KLbs3_HggDTTkLERQUEzTLHt_9sNdSI/htmlRecords/submit"
@@ -698,6 +713,60 @@
       }
     }
   });
+</script>
+    <script>
+window.dataLayer = window.dataLayer || [];
+
+// Push form view event on page load
+window.dataLayer.push({
+  'event': 'zf_formview',
+  'zf_category': 'Zoho Forms',
+  'zf_action': 'Form View',
+  'zf_formname': 'ooka de retail horeca webform'
+});
+
+console.log("Zoho form view event pushed!");
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    if (form.dataset.gtmFired === "1") return;
+
+    if (typeof zf_ValidateAndSubmit === "function" && !zf_ValidateAndSubmit()) {
+      e.preventDefault();
+      return;
+    }
+
+    e.preventDefault();
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'generate_lead',
+      zf_category: 'Zoho Forms',
+      zf_action: 'Submit Form',
+      zf_formname: 'ooka de retail horeca webform',
+      eventCallback: function () {
+        if (form.dataset.gtmFired === "1") return;
+        form.dataset.gtmFired = "1";
+        form.submit();
+      },
+      eventTimeout: 2000
+    });
+
+    // Fallback: submit even if GTM never loads / is blocked
+    setTimeout(function () {
+      if (form.dataset.gtmFired === "1") return;
+      form.dataset.gtmFired = "1";
+      form.submit();
+    }, 2000);
+  }, true);
+});
 </script>
   </body>
 </html>
